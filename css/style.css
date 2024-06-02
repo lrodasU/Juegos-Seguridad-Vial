@@ -1,14 +1,15 @@
 @import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
 
 :root {
-  --top-margin-desktop: 4rem;
+  --top-margin-desktop: 0.25rem;
   --top-margin-mobile: 2rem;
   --main-color: #212529;
   --secondary-color: #fff;
+  --tertiary-color: #bebebe;
   --font-color: #fff;
   --link-color: #ffffff;
   --link-color-active: #d3d3d3;
-  --link-color-hover:#bebebe;
+  --link-color-hover: #bebebe;
 }
 
 * {
@@ -21,6 +22,14 @@ h1 {
   font-weight: 300;
   line-height: 1.2;
   margin: 0;
+}
+
+h2 {
+  font-size: calc(0.75rem + 1.5vw);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 body {
@@ -48,21 +57,21 @@ main {
 .header {
   background-color: var(--main-color);
   color: var(--font-color);
-  padding-top: .75rem;
+  padding-top: 0.75rem;
   padding-bottom: 1rem;
 }
 
-.header a{
+.header a {
   font-size: 1.1rem;
   font-weight: 200;
-  margin-left: .75rem;
+  margin-left: 0.75rem;
 }
 
-.header a:hover{
+.header a:hover {
   color: var(--link-color-hover);
 }
 
-.active{
+.active {
   color: var(--link-color-active);
 }
 
@@ -71,8 +80,7 @@ a {
   color: var(--link-color);
 }
 
-
-.info{
+.info {
   width: 25%;
   text-align: justify;
 }
@@ -92,20 +100,163 @@ a {
 }
 
 .uade {
-  width: 20%;
+  width: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  margin-top: 1rem;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 1.5rem;
+  column-gap: 3rem;
+}
+
+.member {
+  background-color: var(--tertiary-color);
+  width: 25%;
+  border-radius: 20px;
+  padding-bottom: 1rem;
+  color: var(--font-color);
+}
+
+.member img {
+  border-radius: 20px;
+  width: 85%;
+  margin-top: 1.5rem;
+}
+
+.member h3 {
+  margin: 0.5rem;
+}
+
+.text-container {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-container p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.text-container img {
+  width: 90%;
+}
+
+.text-container h1 {
+  margin-top: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  width: 10%;
+  height: auto;
+}
+
+#carousel-container {
+  width: 50%;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  position: relative;
+}
+
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: -.25rem;
+}
+
+.carousel-img {
+  width: 100%;
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+.description {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--tertiary-color);
+  padding-bottom: 1rem;
+}
+.description p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: left;
 }
 
 @media (max-width: 760px) {
-  .container{
+  .container {
     width: 100%;
   }
   main {
     margin-top: var(--top-margin-mobile);
   }
-  .uade{
+  .uade {
     width: 75%;
   }
-  .header{
+  .header {
     text-align: center;
+  }
+  .wrapper {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .member {
+    width: 90%;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  .text-container {
+    width: 100%;
+  }
+  .text-container img {
+    width: 100%;
+  }
+  .text-container h1 {
+    margin-top: 0;
+  }
+  .btn {
+    width: 35%;
   }
 }
