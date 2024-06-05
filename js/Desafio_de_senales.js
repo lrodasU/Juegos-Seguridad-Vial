@@ -1,96 +1,96 @@
 const questions = [
   {
-    image: "/images/bicis.png",
+    image: "../images/bicis.png",
     description: "La señal indica circulacion exclusiva de bicicletas",
     answer: true
   },
   {
-    image: "/images/animales_sueltos.png",
+    image: "../images/animales_sueltos.png",
     description: "La señal indica animales sueltos (vacas)",
     answer: true
   },
   {
-    image: "/images/contramano.jpg",
+    image: "../images/contramano.jpg",
     description: "La señal de tránsito en contramano indica que está prohibido circular en sentido contrario al tráfico.",
     answer: true
   },
   {
-    image: "/images/cruce_peatonal.jpg",
+    image: "../images/cruce_peatonal.jpg",
     description: "La señal indica que hay un cruce peatonal que indican dónde los peatones pueden cruzar la calle de manera segura",
     answer: true
   },
   {
-    image: "/images/escolares.jpg",
+    image: "../images/escolares.jpg",
     description: "La señal alerta a los conductores sobre la presencia de una zona escolar",
     answer: true
   },
   {
-    image: "/images/estacionamiento_exclusivo.jpg",
+    image: "../images/estacionamiento_exclusivo.jpg",
     description: "La señal indica Estacionamiento Exclusivo, solo se permite estacionar vehículos autorizados en esa área ",
     answer: true
   },
   {
-    image: "/images/estrechamiento_calzada.jpg",
+    image: "../images/estrechamiento_calzada.jpg",
     description: "La señal indica Estrechamiento de la Calzada, la vía se reduce en anchura",
     answer: true
   },
   {
-    image: "/images/hombres_trabajando.jpg",
+    image: "../images/hombres_trabajando.jpg",
     description: "La señal advierte a los conductores sobre la presencia de trabajadores en la vía",
     answer: true
   },
   {
-    image: "/images/no_adelantar.png",
+    image: "../images/no_adelantar.png",
     description: "La señal indica No Adelantar, prohibido pasar a otros vehículos en ese tramo de la carretera",
     answer: true
   },
   {
-    image: "/images/no_avanzar.jpg",
+    image: "../images/no_avanzar.jpg",
     description: "La señal indica No Avanzar, conductores que deben detenerse completamente y no proseguir más allá de ese punto",
     answer: true
   },
   {
-    image: "/images/no_cambio_de_carril.png",
+    image: "../images/no_cambio_de_carril.png",
     description: "La señal indica No Cambiar de Carril",
     answer: true
   },
   {
-    image: "/images/no_detenerse.jpg",
+    image: "../images/no_detenerse.jpg",
     description: "La señal indica No estacionar Ni detenerse",
     answer: true
   },
   {
-    image: "/images/no_estacionar.jpg",
+    image: "../images/no_estacionar.jpg",
     description: "La señal indica la prohibicion de estacionar",
     answer: true
   },
   {
-    image: "/images/no_girar.jpg",
+    image: "../images/no_girar.jpg",
     description: "La señal indica no girar, en este caso, a la izquierda",
     answer: true
   },
   {
-    image: "/images/no_u.png",
+    image: "../images/no_u.png",
     description: "La señal indica no girar en U",
     answer: true
   },
   {
-    image: "/images/permitido_girar.jpg",
+    image: "../images/permitido_girar.jpg",
     description: "La señal indica que esta permitido girar, en este caso, a la izquierda",
     answer: true
   },
   {
-    image: "/images/puesto_sanitario.jpg",
+    image: "../images/puesto_sanitario.jpg",
     description: "La señal indica la presencia de un puesto sanitario",
     answer: true
   },
   {
-    image: "/images/transito_pesado.png",
+    image: "../images/transito_pesado.png",
     description: "La señal indica que los vehiculos de transporte pesado deben circular por el carril extremo",
     answer: true
   },
   {
-    image: "/images/velocidad_maxima.jpg",
+    image: "../images/velocidad_maxima.jpg",
     description: "La señal indica el máximo de velocidad a que se puede circular en el tramo señalizado.",
     answer: true
   }
