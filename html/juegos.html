@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style.css" />
-    <!-- <link rel="icon" type="image/x-icon" href="favicon.png" /> -->
-
     <title>Seguridad Vial</title>
   </head>
   <body>
@@ -34,21 +32,21 @@
         </div>
         <div id="carousel-container">
           <div id="carousel">
-            <div class="carousel-item">
+            <div class="carousel-item" data-url="juego1.html">
               <img
                 class="carousel-img"
                 src="/Juegos-Seguridad-Vial/images/Desafio de señales.png"
                 alt="Image 1"
               />
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-url="juego2.html">
               <img
                 class="carousel-img"
                 src="https://via.placeholder.com/400x200?text=Image+2"
                 alt="Image 2"
               />
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-url="juego3.html">
               <img
                 class="carousel-img"
                 src="https://via.placeholder.com/400x200?text=Image+3"
@@ -60,9 +58,9 @@
           <div id="next" class="arrow">&gt;</div>
         </div>
         <div class="description">
-          <h1 id="gameTitle">Desafio de señales</h1>
+          <h1 id="gameTitle">Desafío de señales</h1>
           <p id="gameDescription">
-            Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde "Verdadero" o "Falso" y pon a prueba tu
+            Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu
             conocimiento vial!
           </p>
         </div>
@@ -76,6 +74,12 @@
         const description = document.getElementById("gameDescription");
 
         const games = [
+          {
+            name: "Desafío de señales",
+            description:
+              "Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu conocimiento vial!",
+            url: "Desafio_de_senales.html"
+          },
           {
             name: "Cruce Seguro",
             description:
@@ -120,6 +124,12 @@
           index = (index + 1) % totalItems;
           updateCarousel();
         });
+
+  items.forEach((item, idx) => {
+    item.addEventListener("click", () => {
+      window.location.href = games[idx].url;
+    });
+  });
       </script>
     </main>
 

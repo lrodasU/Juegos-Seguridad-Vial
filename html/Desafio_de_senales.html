@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso</title>
+  <link rel="stylesheet" href="Desafio_de_senales.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="integrantes.html">Integrantes</a>
+      <a href="avances.html">Avances</a>
+      <a href="juegos.html">Juegos</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="score">Puntuación: <span id="score-value">0</span></div>
+    <div class="question-container">
+      <img id="traffic-sign" src="/images/bicis.png" alt="Señal de Tránsito">
+      <p id="question-text">¿La señal indica que debes detenerte?</p>
+    </div>
+    <div class="buttons">
+      <button onclick="evaluateAnswer(true)">Verdadero</button>
+      <button onclick="evaluateAnswer(false)">Falso</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer">
+      <p>
+        Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+        desarrollo Web - UADE - 2024
+      </p>
+    </div>
+  </footer>
+
+  <script src="Desafio_de_señales.js"></script>
+</body>
+
+</html>
