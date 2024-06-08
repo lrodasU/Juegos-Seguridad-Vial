@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de Señales de Tráfico</title>
+    <link rel="stylesheet" href="../css/styleCarrera.css">
+</head>
+<body>
+    <header>
+        <h1>Carrera de Señales de Tráfico</h1>
+    </header>
+    <main>
+        <section id="game-objective">
+            <h2>Objetivo del Juego</h2>
+            <p>El objetivo del juego es llegar desde tu casa hasta la universidad UADE respondiendo preguntas sobre seguridad vial en Argentina. Para ganar, debes responder correctamente 10 preguntas.</p>
+            <h2>Reglas del Juego</h2>
+            <ul>
+                <li>El juego puede ser jugado por uno o dos jugadores.</li>
+                <li>Responde cada pregunta seleccionando la opción correcta y presionando el botón "Responder".</li>
+                <li>Para ganar, debes responder correctamente 10 preguntas.</li>
+                <li>Si se selecciona el modo de dos jugadores, el ganador será quien responda correctamente más preguntas en el menor tiempo posible.</li>
+                <li>En caso de empate en el número de respuestas correctas, el ganador será el jugador que haya tomado menos tiempo.</li>
+            </ul>
+            <button id="start-game">Comenzar</button>
+        </section>
+        <section id="player-selection" style="display:none;">
+            <h2>Seleccionar Jugadores</h2>
+            <button id="one-player">Un Jugador</button>
+            <button id="two-players">Dos Jugadores</button>
+        </section>
+        <section id="question-container" aria-labelledby="question" style="display:none;">
+            <p id="question"></p>
+            <ul id="options"></ul>
+            <button id="submit-answer">Responder</button>
+        </section>
+        <section id="progress-container" style="display:none;">
+            <div id="route">
+                <img id="car" src="../images/car.png" alt="Car" />
+            </div>
+            <span id="start">Casa</span>
+            <span id="end">UADE</span>
+            <div id="progress-bar"></div>
+            <div id="timer">Tiempo: 00:00</div>
+        </section>
+        <section id="game-results" style="display:none;">
+            <h2>Resultados del Juego</h2>
+            <div id="results"></div>
+            <button id="restart-game">Reiniciar Juego</button>
+        </section>
+    </main>
+    <script src="../js/carrera.js"></script>
+</body>
+</html>
