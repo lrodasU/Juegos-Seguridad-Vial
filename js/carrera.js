@@ -1,5 +1,3 @@
-
-//logica xD
 document.addEventListener('DOMContentLoaded', () => {
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
@@ -22,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     let timer;
     let timeElapsed = 0;
-    let gameType = 'single'; // 'single' or 'multi'
-    let playerScores = [{ score: 0, time: 0 }, { score: 0, time: 0 }];
+    let gameType = 'single'; // 'single' o 'multi'
+    let playerScores = [{ score: 0, time: 0, questionsAnswered: 0 }, { score: 0, time: 0, questionsAnswered: 0 }];
     let currentPlayer = 0;
 
     const questions = [
@@ -109,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             question: "¿Qué debes hacer si ves una señal de cruce de ferrocarril?",
-            options: ["Acelerar", "Detenerse y ceder el paso", "Ignorar la señal"],
+            options: ["Acelerar", "Detenerse y ceder el paso", "Reducir la velocidad y estar atento"],
             correctAnswer: 2,
         },
         {
@@ -269,9 +267,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     ];
 
-    const TOTAL_QUESTIONS = 10; // Número total de preguntas que deben responder los jugadores
+    const TOTAL_QUESTIONS = 10;
+
+    function shuffleQuestions() {
+        for (let i = questions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [questions[i], questions[j]] = [questions[j], questions[i]];
+        }
+    }
 
     function startGame() {
+        shuffleQuestions();
         gameObjective.style.display = 'none';
         playerSelection.style.display = 'block';
     }
@@ -279,27 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectPlayers(type) {
         gameType = type;
         currentPlayer = 0;
-        playerScores = [{ score: 0, time: 0 }, { score: 0, time: 0 }];
+        playerScores = [{ score: 0, time: 0, questionsAnswered: 0 }, { score: 0, time: 0, questionsAnswered: 0 }];
         playerSelection.style.display = 'none';
         questionContainer.style.display = 'block';
         progressContainer.style.display = 'block';
         startTimer();
         showQuestion();
-    }
-
-    function showResults() {
-        clearInterval(timer);
-        questionContainer.style.display = 'none';
-        progressContainer.style.display = 'none';
-        gameResults.style.display = 'block';
-        if (gameType === 'multi') {
-            const winner = playerScores[0].score > playerScores[1].score ? 0 : (playerScores[0].score < playerScores[1].score ? 1 : (playerScores[0].time < playerScores[1].time ? 0 : 1));
-            resultsElement.innerHTML = `<p>Jugador 1: ${playerScores[0].score} respuestas correctas, tiempo: ${formatTime(playerScores[0].time)}</p>
-                                    <p>Jugador 2: ${playerScores[1].score} respuestas correctas, tiempo: ${formatTime(playerScores[1].time)}</p>
-                                    <p>¡El ganador es el Jugador ${winner + 1}!</p>`;
-        } else {
-            resultsElement.innerHTML = `<p>Tu puntuación es: ${score} de ${TOTAL_QUESTIONS}</p>`;
-        }
     }
 
     function checkAnswer() {
@@ -310,27 +301,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 score++;
                 playerScores[currentPlayer].score++;
             }
+            playerScores[currentPlayer].questionsAnswered++;
             currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
+            if (currentQuestionIndex < questions.length && playerScores[currentPlayer].score < 10) {
                 showQuestion();
             } else {
                 if (gameType === 'multi') {
-                    currentPlayer = (currentPlayer + 1) % 2;
-                    if (currentPlayer === 0) {
-                        showResults();
-                        return;
-                    } else {
-                        currentQuestionIndex = 0;
-                        showQuestion();
+                    if (playerScores[currentPlayer].score >= 10 || currentQuestionIndex >= questions.length) {
+                        currentPlayer++;
+                        if (currentPlayer < 2) {
+                            alert('¡Es el turno del jugador 2!');
+                            currentQuestionIndex = 0;
+                            score = 0;
+                            shuffleQuestions();
+                            startTimer();
+                            showQuestion();
+                        } else {
+                            showResults();
+                        }
                     }
                 } else {
-                    if (score === TOTAL_QUESTIONS) {
-                        showResults();
-                        return;
-                    } else {
-                        showResults();
-                        return; 
-                    }
+                    showResults();
                 }
             }
             updateProgressBar();
@@ -338,7 +329,36 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, selecciona una opción.');
         }
     }
-    
+
+    function showResults() {
+        clearInterval(timer);
+        questionContainer.style.display = 'none';
+        progressContainer.style.display = 'none';
+        gameResults.style.display = 'block';
+
+        if (gameType === 'multi') {
+            let winner;
+            if (playerScores[0].score > playerScores[1].score) {
+                winner = 0;
+            } else if (playerScores[0].score < playerScores[1].score) {
+                winner = 1;
+            } else {
+                winner = playerScores[0].time < playerScores[1].time ? 0 : 1;
+            }
+            resultsElement.innerHTML = `
+                <p>Resultados del Jugador 1: ${playerScores[0].score} correctas de ${playerScores[0].questionsAnswered} en ${formatTime(playerScores[0].time)}</p>
+                <p>
+                            <p>Resultados del Jugador 2: ${playerScores[1].score} correctas de ${playerScores[1].questionsAnswered} en ${formatTime(playerScores[1].time)}</p>
+                <p>¡Felicidades! ¡El jugador ${winner + 1} ganó!</p>
+            `;
+        } else {
+            resultsElement.innerHTML = `
+                <p>¡Felicidades! ¡Llegaste a UADE!</p>
+                <p>Tiempo: ${formatTime(timeElapsed)}</p>
+                <p>Preguntas correctas: ${playerScores[0].score} de ${playerScores[0].questionsAnswered}</p>
+            `;
+        }
+    }
 
     function showQuestion() {
         const question = questions[currentQuestionIndex];
@@ -356,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateProgressBar() {
-        const progress = (score / TOTAL_QUESTIONS) * 100;
+        const progress = (playerScores[currentPlayer].score / TOTAL_QUESTIONS) * 100;
         progressBar.style.width = `${progress}%`;
         carElement.style.left = `${progress}%`;
     }
