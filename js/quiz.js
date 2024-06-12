@@ -90,7 +90,7 @@ const questionsImages = [
     '../images/preg7.jpg',
     '../images/preg8.png',
     '../images/preg9.jpg',
-    '../images/preg10.jpg',
+    '../images/preg10.png',
 ]
 
 const questionElement = document.getElementById("question");
