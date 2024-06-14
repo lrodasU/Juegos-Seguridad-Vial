@@ -11,7 +11,7 @@
 :root {
   --top-margin-desktop: 0.25rem;
   --top-margin-mobile: 2rem;
-  --main-color: #212529;
+  --main-color: #1E1F30;
   --secondary-color: #6C757D;
   --tertiary-color: #F8F9FA;
   --font-color: #343A40;
@@ -27,7 +27,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--tertiary-color);
+  background-color: rgba(0, 0, 0, 0.7);
   margin: 0;
   padding: 0;
 }
@@ -60,7 +60,7 @@ a {
 
 .container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 100px auto;
   background-color: var(--container-bg);
   padding: 20px;
   border: solid var(--container-border);

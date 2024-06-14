@@ -1,11 +1,11 @@
-@import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 :root {
   --top-margin-desktop: 0.25rem;
   --top-margin-mobile: 2rem;
-  --main-color: #212529;
+  --main-color: #1E1F30;
   --secondary-color: #fff;
-  --tertiary-color: #bebebe;
+  --tertiary-color: #5a5b77;
   --font-color: #fff;
   --link-color: #ffffff;
   --link-color-active: #d3d3d3;
@@ -14,24 +14,31 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
   font-size: calc(1.425rem + 2.1vw);
   font-weight: 300;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
   line-height: 1.2;
   margin: 0;
+  color: var(--font-color);
 }
 
 h2 {
   font-size: calc(0.75rem + 1.5vw);
-  font-weight: 300;
+  font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   line-height: 1.2;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
+h4 {
+  font-weight: 600;
+  color: var(--font-color);
+}
 body {
   margin: 0;
   padding: 0;
@@ -40,7 +47,10 @@ body {
   min-height: 100vh;
   font-size: 1.25rem;
   font-weight: 300;
-  background-color: var(--secondary-color);
+  background-image: linear-gradient(0deg,
+        rgba(0, 0, 0, .4),
+        rgba(0, 0, 0, .4)), url(../images/fondo-home.jpg);
+    background-size: cover
 }
 
 main {
@@ -48,10 +58,17 @@ main {
   overflow: auto;
   margin-top: var(--top-margin-desktop);
   margin-bottom: 5rem;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
   text-align: center;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -100,7 +117,7 @@ a {
 }
 
 .uade {
-  width: 25%;
+  width: 35%;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -133,6 +150,7 @@ a {
 
 .member h3 {
   margin: 0.5rem;
+  font-weight: 500;
 }
 
 .text-container {
@@ -149,6 +167,7 @@ a {
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.5;
+  color: var(--font-color);
 }
 
 .text-container img {
@@ -173,6 +192,7 @@ a {
   margin-right: auto;
   margin-bottom: 0;
   position: relative;
+  cursor: pointer;
 }
 
 #carousel {
@@ -200,10 +220,12 @@ a {
 
 #prev {
   left: 10px;
+  background-color: #5a5b77;
 }
 
 #next {
   right: 10px;
+  background-color: #5a5b77;
 }
 
 .description {
@@ -219,6 +241,9 @@ a {
   text-align: left;
 }
 
+#gameTitle {
+  margin-top: 15px;
+}
 @media (max-width: 760px) {
   .container {
     width: 100%;

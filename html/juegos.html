@@ -35,7 +35,7 @@
             <div class="carousel-item" data-url="juego1.html">
               <img
                 class="carousel-img"
-                src="../images/Desafio de señales.png"
+                src="../images/Desafio de señales.png" 
                 alt="Image 1"
               />
             </div>
@@ -63,6 +63,9 @@
             Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu
             conocimiento vial!
           </p>
+          <p id="gameAuthor">Autor: Lara Luciano</p>
+          <p><a id="repoLink" href="https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/js/Desafio_de_senales.js"
+              target="_blank">Repositorio de GitHub</a></p>
         </div>
       </div>
       <script>
@@ -72,19 +75,25 @@
         const items = document.querySelectorAll(".carousel-item");
         const gameName = document.getElementById("gameTitle");
         const description = document.getElementById("gameDescription");
+          const gameAuthor = document.getElementById("gameAuthor");
+          const repoLink = document.getElementById("repoLink");
 
         const games = [
           {
             name: "Desafío de señales",
             description:
               "Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu conocimiento vial!",
-            url: "Desafio_de_senales.html"
+            url: "Desafio_de_senales.html",
+            author: "Lara Luciano",
+            repo: "Repositorio de GitHub"
           },
           {
             name: "Quiz",
             description:
               "Se describirá una situación en la que usted se encuentra y se le presentan 3 posibles respuestas. El jugador deberá elegir una opción de respuesta la cual se le indicará si está bien o mal. Al final del juego se mostrará el puntaje obtenido junto a la opción de volver a jugar.",
-            url: "quiz.html"
+            url: "quiz.html",
+            author: "Alex Menéndez",
+            repo: "Repositorio de GitHub"
           },
           {
             name: "Conductor Consciente",
@@ -115,6 +124,9 @@
           carousel.style.transform = `translateX(-${index * 100}%)`;
           gameName.innerHTML = games[index].name;
           description.innerHTML = games[index].description;
+          gameAuthor.innerHTML = `Autor: ${games[index].author}`;
+          repoLink.href = games[index].repo;
+          repoLink.innerHTML = "Repositorio de GitHub";
         }
 
         prevButton.addEventListener("click", () => {
@@ -132,6 +144,8 @@
       window.location.href = games[idx].url;
     });
   });
+
+  updateCarousel();
       </script>
     </main>
 
