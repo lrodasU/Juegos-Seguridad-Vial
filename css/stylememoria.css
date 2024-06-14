@@ -1,18 +1,15 @@
 .grid {
-    display: flex;
-    width: 100px;
-    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; /* Optional: adds space between grid items */
+    width: 50%;
+    justify-content: center;
   }
-
+h3{
+  color: white;
+}
 body{
   background-color: white;
-  font-family: Arial, sans-serif;
-}
-
-header{
-  text-align: center;
-  height: 100px; 
-  color: black;
-  font-size: 30px;
 }
 

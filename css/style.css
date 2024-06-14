@@ -214,19 +214,18 @@ a {
 
 .arrow {
   position: absolute;
-  top: 50%;
+  font-size: 52px;
   transform: translateY(-50%);
   cursor: pointer;
+  top: 50%;
 }
 
 #prev {
   left: 10px;
-  background-color: #5a5b77;
 }
 
 #next {
   right: 10px;
-  background-color: #5a5b77;
 }
 
 .description {
