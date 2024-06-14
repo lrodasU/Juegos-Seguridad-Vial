@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/testDriveStyle.css" />
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.png" /> -->
+
+    <title>Test Drive - Seguridad Vial</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <a class="active" href="../index.html">Home</a>
+        <a href="integrantes.html">Integrantes</a>
+        <a href="avances.html">Avances</a>
+        <a href="juegos.html">Juegos</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Test Drive</h1>
+        <div id="gameOverModal" class="modal">
+          <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>Tu tiempo jugado fue: <span id="finalTime">0:00</span></p>
+            <p>Tu puntaje fue: <span id="finalScore">0000</span></p>
+            <button id="btn">Reintentar</button>
+          </div>
+        </div>
+        <div id="gameContainer">
+          <div id="car"></div>
+          <div id="timer">0:00</div>
+          <div id="score">0000</div>
+          <div id="pause">PAUSA</div>
+        </div>
+        <script src="../js/testDrive.js"></script>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <p>
+          Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+          desarrollo Web - UADE - 2024
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

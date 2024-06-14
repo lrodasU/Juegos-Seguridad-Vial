@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Seguridad Vial</title>
+    <title>Juegos - Seguridad Vial</title>
   </head>
   <body>
     <header class="header">
@@ -21,13 +21,10 @@
         <div class="text-container">
           <h1>Juegos</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            tincidunt, odio a feugiat iaculis, nulla ligula dictum magna, eget
-            interdum tortor risus vitae nisi. Aenean ullamcorper justo dapibus,
-            hendrerit massa non, rhoncus mauris. Nulla placerat in risus sit
-            amet dictum. Praesent non diam dui. Maecenas bibendum purus neque,
-            nec aliquet erat maximus eu. Sed eros odio, dignissim quis
-            pellentesque eget, eleifend eget mi.
+            Los juegos están diseñados para educar y concientizar sobre la
+            seguridad vial de una manera interactiva y divertida. A través de
+            ellos, buscamos fomentar la responsabilidad al volante. <br /><br />
+            Selecciona un juego haciendo click en la portada.
           </p>
         </div>
         <div id="carousel-container">
@@ -35,23 +32,21 @@
             <div class="carousel-item" data-url="juego1.html">
               <img
                 class="carousel-img"
-                src="../images/Desafio de señales.png" 
+                src=""
                 alt="Image 1"
               />
             </div>
             <div class="carousel-item" data-url="juego2.html">
-              <img
-                class="carousel-img"
-                src="https://via.placeholder.com/400x200?text=Image+2"
-                alt="Image 2"
-              />
+              <img class="carousel-img" src="" alt="Image 2" />
             </div>
             <div class="carousel-item" data-url="juego3.html">
-              <img
-                class="carousel-img"
-                src="https://via.placeholder.com/400x200?text=Image+3"
-                alt="Image 3"
-              />
+              <img class="carousel-img" src="" alt="Image 3" />
+            </div>
+            <div class="carousel-item" data-url="juego3.html">
+              <img class="carousel-img" src="" alt="Image 4" />
+            </div>
+            <div class="carousel-item" data-url="juego3.html">
+              <img class="carousel-img" src="" alt="Image 5" />
             </div>
           </div>
           <div id="prev" class="arrow">&lt;</div>
@@ -60,12 +55,20 @@
         <div class="description">
           <h1 id="gameTitle">Desafío de señales</h1>
           <p id="gameDescription">
-            Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu
+            Adivina si la descripción corresponde a la señal de tránsito
+            mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu
             conocimiento vial!
+            <br />
           </p>
           <p id="gameAuthor">Autor: Lara Luciano</p>
-          <p><a id="repoLink" href="https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/js/Desafio_de_senales.js"
-              target="_blank">Repositorio de GitHub</a></p>
+          <p>
+            <a
+              id="repoLink"
+              href="https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/html/Desafio_de_senales.html"
+              target="_blank"
+              >Repositorio de GitHub</a
+            >
+          </p>
         </div>
       </div>
       <script>
@@ -73,10 +76,11 @@
         const prevButton = document.getElementById("prev");
         const nextButton = document.getElementById("next");
         const items = document.querySelectorAll(".carousel-item");
+        const images = document.querySelectorAll(".carousel-img");
         const gameName = document.getElementById("gameTitle");
         const description = document.getElementById("gameDescription");
-          const gameAuthor = document.getElementById("gameAuthor");
-          const repoLink = document.getElementById("repoLink");
+        const gameAuthor = document.getElementById("gameAuthor");
+        const repoLink = document.getElementById("repoLink");
 
         const games = [
           {
@@ -85,7 +89,8 @@
               "Adivina si la descripción corresponde a la señal de tránsito mostrada. ¡Responde 'Verdadero' o 'Falso' y pon a prueba tu conocimiento vial!",
             url: "Desafio_de_senales.html",
             author: "Lara Luciano",
-            repo: "Repositorio de GitHub"
+            repo: "https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/html/Desafio_de_senales.html",
+            img: "../images/Desafio de señales.png",
           },
           {
             name: "Quiz",
@@ -93,7 +98,7 @@
               "Se describirá una situación en la que usted se encuentra y se le presentan 3 posibles respuestas. El jugador deberá elegir una opción de respuesta la cual se le indicará si está bien o mal. Al final del juego se mostrará el puntaje obtenido junto a la opción de volver a jugar.",
             url: "quiz.html",
             author: "Alex Menéndez",
-            repo: "Repositorio de GitHub"
+            repo: "https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/html/quiz.html",
           },
           {
             name: "Conductor Consciente",
@@ -101,20 +106,20 @@
               "Los jugadores asumen el papel de conductores virtuales y deben evitar distracciones como mensajes de texto, llamadas telefónicas o ajustes en la música mientras conducen. Ganarán puntos por mantener su atención en la carretera y respetar las señales de tráfico.",
           },
           {
-            name: "Caza de Señales",
+            name: "Test Drive",
             description:
-              "Los jugadores exploran un entorno virtual en busca de señales de tráfico ocultas. Al encontrar una señal, deben identificar su significado correcto. Con cada señal identificada correctamente, acumulan puntos y avanzan de nivel.",
-          },
-          {
-            name: "Bicicleta Segura",
-            description:
-              "Este juego se centra en la seguridad de los ciclistas. Los jugadores deben navegar por un camino lleno de obstáculos, como vehículos estacionados, peatones distraídos y baches en la carretera. Deben esquivar estos obstáculos y seguir las reglas de tráfico para llegar a su destino de manera segura.",
+              "En Test Drive deberás ponerte al volante y asegurar no causar ningún accidente. Utiliza las flechas del teclado o las letras A y D para moverte. Consigue el mejor puntaje y la mayor duración posibles",
+            url: "testDrive.html",
+            author: "Lucas Rodas",
+            repo: "https://github.com/lrodasU/Juegos-Seguridad-Vial/blob/main/html/testDrive.html",
           },
           {
             name: "Memoria Vial",
             description:
               "Similar al clásico juego de memoria, los jugadores deben hacer coincidir pares de tarjetas con imágenes relacionadas con la seguridad vial, como señales de tráfico, vehículos y peatones. Este juego ayuda a reforzar el reconocimiento de señales y la comprensión de las normas de tráfico.",
-              url: "memoria.html"
+            url: "memoria.html",
+            author: "Valentina Micheloni",
+            repo: "",
           },
         ];
         let index = 0;
@@ -126,7 +131,6 @@
           description.innerHTML = games[index].description;
           gameAuthor.innerHTML = `Autor: ${games[index].author}`;
           repoLink.href = games[index].repo;
-          repoLink.innerHTML = "Repositorio de GitHub";
         }
 
         prevButton.addEventListener("click", () => {
@@ -139,13 +143,17 @@
           updateCarousel();
         });
 
-  items.forEach((item, idx) => {
-    item.addEventListener("click", () => {
-      window.location.href = games[idx].url;
-    });
-  });
+        images.forEach((img, idx) => {
+          img.src = games[idx].img;
+        });
 
-  updateCarousel();
+        items.forEach((item, idx) => {
+          item.addEventListener("click", () => {
+            window.location.href = games[idx].url;
+          });
+        });
+
+        updateCarousel();
       </script>
     </main>
 
