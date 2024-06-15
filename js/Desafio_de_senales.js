@@ -102,7 +102,7 @@ const trafficSign = document.getElementById('traffic-sign');
 const description = document.getElementById('question-text');
 const result = document.getElementById('result');
 const scoreValue = document.getElementById('score-value');
-const modal = document.getElementById('modal');
+const modal = document.getElementById('pop-modal');
 const modalText = document.getElementById('modal-text');
 const closeModalButton = document.querySelector('.close');
 
@@ -116,6 +116,7 @@ function getRandomIndex(array) {
 }
 
 function displayQuestion() {
+  closeModal();
   currentImageIndex = getRandomIndex(questions);
   currentDescriptionIndex = getRandomIndex(questions);
 
