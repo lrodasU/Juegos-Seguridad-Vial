@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/styleMemoria.css" />
+    <!-- <link rel="stylesheet" href="../css/styleMemoria.css" /> -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
 
-    <title>Memoria - Seguridad Vial</title>
+    <title>Memoria Vial - Seguridad Vial</title>
+    <style>
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        width: 50%;
+        justify-content: center;
+      }
+
+      h3 {
+        color: white;
+      }
+
+      body {
+        background-color: white;
+      }
+    </style>
   </head>
   <body>
     <body>
@@ -22,7 +40,7 @@
 
       <main>
         <div class="container">
-          <h1>Memoria</h1>
+          <h1>Memoria Vial</h1>
           <h3>Puntos:<span id="result"></span></h3>
           <div id="grid"></div>
           <h4>Valentina Micheloni</h4>
