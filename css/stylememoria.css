@@ -1,14 +1,16 @@
-.grid {
+#grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px; /* Optional: adds space between grid items */
+    gap: 10px;
     width: 50%;
     justify-content: center;
   }
+
 h3{
   color: white;
 }
+
 body{
   background-color: white;
 }
