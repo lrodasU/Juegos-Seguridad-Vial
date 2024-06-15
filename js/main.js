@@ -28,7 +28,7 @@ const games = [
         img: "../images/portada_quiz.png",
     },
     {
-        name: "Conductor Consciente",
+        name: "De casa a UADE",
         description:
             "El objetivo del juego es llegar desde tu casa hasta la universidad UADE respondiendo preguntas sobre seguridad vial en Argentina. Para ganar, debes responder correctamente 10 preguntas.",
         url: "carrera.html",
