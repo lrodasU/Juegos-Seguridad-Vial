@@ -5,9 +5,13 @@ const scoreDisplay = document.getElementById('score');
 const finalTime = document.getElementById('finalTime');
 const finalScore = document.getElementById('finalScore');
 const pause = document.getElementById('pause');
+const leftArrow = document.getElementById('leftArrow');
+const rightArrow = document.getElementById('rightArrow');
+const explosion = document.getElementById('explosion');
 var modal = document.getElementById("gameOverModal");
 var btn = document.getElementById("btn");
 const lanes = [25, 125, 225];
+const expLanes = [-40, 60, 160];
 let isPaused = false;
 let currentLane = 1;
 let obstacles = [];
@@ -25,6 +29,7 @@ function moveCar(direction) {
         currentLane++;
     }
     car.style.left = lanes[currentLane] + 'px';
+    explosion.style.left = expLanes[currentLane] + 'px';
 }
 
 function createObstacle() {
@@ -61,24 +66,25 @@ function checkCollision(obstacle) {
         obstacleRect.top < carRect.bottom &&
         obstacleRect.bottom > carRect.top) {
         isPaused = true;
+        explosion.style.display = "block";
         openModal();
     }
 }
 
 function resetGame() {
-    console.log("reseting");
     isPaused = false;
+    explosion.style.display = "none";
     score = 0;
     obstacles.forEach(obstacle => obstacle.remove());
     obstacles = [];
     currentLane = 1;
     car.style.left = lanes[currentLane] + 'px';
+    explosion.style.left = expLanes[currentLane] + 'px';
     clearInterval(timerInterval);
     timerDisplay.textContent = '0:00';
     lastSpawn = 0;
     elapsedTime = 0;
     startTimer();
-    //gameLoop();
 }
 
 function startTimer() {
@@ -108,6 +114,14 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
+leftArrow.addEventListener('click', function (event) {
+    moveCar('left');
+});
+
+rightArrow.addEventListener('click', function (event) {
+    moveCar('right');
+});
+
 document.addEventListener('keydown', (event) => {
     if (event.key == 'P' || event.key == 'p')
         isPaused = !isPaused;
@@ -131,13 +145,6 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-// Get the modal
-
-
-// Get the <span> element that closes the modal
-
-
-// When the user clicks on <span> (x), close the modal
 function openModal() {
     const minutes = Math.floor(elapsedTime / 60);
     const seconds = elapsedTime % 60;
@@ -155,7 +162,6 @@ btn.onclick = function () {
     closeModal();
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         closeModal();
