@@ -21,6 +21,9 @@ let lastSpawn = 0;
 let spawnInterval = .5;
 let elapsedTime;
 let score = 0;
+const initialSpeed = 5;
+let speed = initialSpeed;
+let speedIncrement = 0.07;
 
 function moveCar(direction) {
     if (direction === 'left' && currentLane > 0) {
@@ -52,7 +55,7 @@ function moveObstacles() {
             obstacles.splice(index, 1);
             score++;
         } else {
-            obstacle.style.top = (top + 5) + 'px';
+            obstacle.style.top = (top + speed) + 'px';
             checkCollision(obstacle);
         }
     });
@@ -99,6 +102,11 @@ function updateTimer() {
     const minutes = Math.floor(elapsedTime / 60);
     const seconds = elapsedTime % 60;
     timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    speedUp();
+}
+
+function speedUp() {
+    speed = initialSpeed * Math.exp(speedIncrement * elapsedTime);
 }
 
 function gameLoop() {
