@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Working");
-    //list all card options
+    
     const cardArray = [
       {
         name: 'cruce caminos',
@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsChosenId = []
     let cardsWon = []
   
-    //create your board
     function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('img')
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
-    //check for matches
+  
     function checkForMatch() {
       const cards = document.querySelectorAll('img')
       const optionOneId = cardsChosenId[0]
